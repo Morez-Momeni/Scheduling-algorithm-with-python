@@ -3,7 +3,6 @@ import time
 import math
 import random
 
-# User input
 n = int(input("Number of processes: "))
 processes = []
 for i in range(n):
@@ -14,13 +13,11 @@ for i in range(n):
 
 processes.sort(key=lambda x: x["arrival"])
 
-# Initialize Pygame
 pygame.init()
 WIDTH, HEIGHT = 1200, 700
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption(" Neon CPU Command - FCFS Scheduling")
 
-# Colors and fonts
 BG_COLOR = (15, 15, 26)
 NEON_BLUE = (0, 255, 255)
 NEON_PURPLE = (209, 127, 255)
@@ -33,7 +30,6 @@ BIG_FONT = pygame.font.SysFont('consolas', 28, bold=True)
 COLORS = [NEON_BLUE, NEON_PURPLE, NEON_GREEN, NEON_ORANGE]
 clock = pygame.time.Clock()
 
-# Globals
 gantt_chart = []
 time_now = 0
 cpu_center = (WIDTH // 2, 220)
@@ -110,7 +106,6 @@ def draw_status(text, size):
     render = font.render(text, True, WHITE)
     WIN.blit(render, (WIDTH // 2 - render.get_width() // 2, 30))
 
-# Main loop
 def main():
     global time_now
     current = 0
